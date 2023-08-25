@@ -1,0 +1,97 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<br>
+	<!-- <div style="width:100%">
+        <div style="float: left; width: 70%; height: 200px;"> -->
+        <!-- <center> -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <h2 style="text-align: center;">Voter Eligibility Check</h2>
+                        <br>
+
+                        <form id="textform" method="post">
+                            <!-- <table style="width:70%; float: right;"> -->
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>
+                                        <label>Enter Your NID: </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="voter_nid" placeholder="123456792" required>
+                                    </td>	
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Enter your Full Name: </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="voter_fullname" placeholder="according to NID" required>
+                                    </td>	
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label>Enter Date of Birth: </label>
+                                    </td>
+                                    <td>
+                                        <input type="date" name="voter_dob" placeholder="" required>
+                                    </td>	
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" class="btn-primary" value="Verify your Voter Eligibility">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+
+                        <details>
+                            <summary>Use Some Dummy Voter Data</summary>
+                            <pre>
+                            <code>
+    voters_data = {
+        '1234567892':{
+            'full_name': 'Md. Al Amin',
+            'dob': '1999-04-02',
+            'eligible': True,
+            'voted': False
+        },
+    
+        '1234567893':{
+            'full_name': 'Karim Islam',
+            'dob': '1999-04-03',
+            'eligible': True,
+            'voted': False
+        },
+    
+        '1234567894':{
+            'full_name': 'Rahim Islam',
+            'dob': '1999-04-04',
+            'eligible': True,
+            'voted': False
+        },
+    
+        '1234567895':{
+            'full_name': 'Salam Islam',
+            'dob': '1999-04-05',
+            'eligible': False,
+            'voted': False
+        },
+    }
+                            </code>
+                            </pre>
+                        </details>
+                        <br><br>
+                        <h5 style="text-align: center;">Workflow of How Voter Eligibility is Checked in the Backend.</h5><hr>
+                        <img src="{{ auth_process_img_url }}" alt="Auth Process Govt DB">
+
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
